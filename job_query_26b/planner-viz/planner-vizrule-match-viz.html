@@ -285,7 +285,7 @@ limitations under the License.
                 if (stepID === "FINAL") {
                     nodeLabel = n.label + "\n" + n.cost;
                 } else {
-                    nodeLabel = n.label;
+                    nodeLabel = n.label + "\n" + n.cost;
                 }
                 var nodeStyle;
                 if (stepID === "FINAL" && n.inFinalPlan === true) {
@@ -347,7 +347,7 @@ limitations under the License.
                 popupContent = "inputs: " + node.inputs;
             else
                 popupContent = node.explanation;
-            popupContent += "<br>Added in Step '"  + stepName + "'";
+            popupContent += "<br>Added in Step '"  + stepName + "'" + " inputs:" + node.inputs;
 
             tippy(nodeElement, { content: popupContent })
             i++;
